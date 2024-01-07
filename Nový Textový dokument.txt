@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Skvělé Neumorphism Boční Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <style>
+        body {
+            background: #1f1f1f;
+            margin: 0;
+            overflow-x: hidden;
+            display: flex;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .side_bar {
+            position: fixed;
+            top: 0;
+            left: -310px;
+            width: 300px;
+            height: 100vh;
+            background: #1f1f1f;
+            padding: 12px;
+            box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+                3px 3px 5px rgba(206, 206, 209, 0.1);
+            transition: left 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .side_bar.hidden {
+            left: -1366px; /* Šířka standardního Full HD displeje + 50cm */
+            box-shadow: none;
+        }
+
+        .side_bar:hover {
+            box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+                3px 3px 5px rgba(206, 206, 209, 0.1);
+        }
+
+        .side_bar .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Nutné pro absolutní pozici ikony */
+        }
+
+        .side_bar .title .icon {
+            position: absolute;
+            top: -4cm; /* Posunutí ikony nad jméno o 4 cm nahoru */
+            left: 50%;
+            transform: translateX(-50%);
+            background: #3498db; /* Barva ikony (změň podle potřeby) */
+            border-radius: 50%;
+            padding: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .side_bar .title .logo {
+            font-size: 30px; /* Zvětšeno o 3px */
+            font-weight: 600;
+            color: #dcdcdc;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+            text-decoration: none; /* Odstranění ozdoby u textu */
+        }
+
+        .side_bar .additional-text {
+            margin-top: 20px;
+            color: #dcdcdc;
+            text-align: center;
+        }
+
+        .side_bar .user-info {
+            margin-top: 3cm; /* Posunutí informací o uživateli dolů o 3 cm */
+        }
+
+        .centered-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #dcdcdc;
+        }
+
+        .centered-content h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .centered-content h2 {
+            font-size: 24px;
+        }
+
+        .giveaway-form {
+            max-width: 300px;
+            margin: auto;
+            background: #2c3e50; /* Barva pozadí formuláře */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+                3px 3px 5px rgba(206, 206, 209, 0.1);
+        }
+
+        .giveaway-form input {
+            margin-bottom: 16px;
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: transparent; /* Odstranění pozadí */
+            color: #fff; /* Barva textu ve formuláři */
+        }
+
+        .giveaway-form small {
+            color: #888;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .giveaway-form button {
+            background-color: #3498db; /* Barva tlačítka */
+            color: #fff; /* Barva textu na tlačítku */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* ... */
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" id="check">
+    <label class="bars" for="check"><i class="fas fa-bars"></i></label>
+
+    <div class="side_bar hidden">
+        <div class="title">
+            <div class="icon" id="user-icon">👤</div>
+            <div class="logo">PhotoBattle cz</div>
+            <label class="button cancel" for="check"><i class="fas fa-times"></i></label>
+        </div>
+        <ul>
+            <!-- Položky menu (bez Instagram) -->
+        </ul>
+        <div class="additional-text user-info" id="user-info">
+            <!-- Dynamicky vložené informace o soutěžích -->
+        </div>
+    </div>
+
+    <div class="centered-content">
+        <h1>PŘÍHLÁŠENÍ DO SOUTEŽE</h1>
+        <h2></h2>
+        <div class="giveaway-form">
+            <form action="/submit_entry" method="post">
+                <input type="text" id="instagram" name="instagram" placeholder="Instagram Jméno" required>
+                <small>Follow our Instagram account to enter the giveaway.</small>
+                <button onclick="window.open('https://www.instagram.com/photobattlecz/')">Follow on Instagram</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('check').addEventListener('change', function() {
+            document.querySelector('.side_bar').classList.toggle('hidden', !this.checked);
+        });
+
+        // Simulace získání informací o soutěžích
+        var userContestInfo = {
+            participated: 5,
+            won: 2
+        };
+
+        // Simulace získání jména přihlášeného uživatele
+        var loggedInUserName = "John Doe"; // Nahraď tím, co máš
+
+        // Dynamicky vložení jména a informací o soutěžích do HTML
+        var userInfoElement = document.getElementById('user-info');
+        userInfoElement.innerHTML = `
+            <p style="font-size: 24px;">${loggedInUserName}</p>
+            <p>Účast: ${userContestInfo.participated}</p>
+            <p>Výhry: ${userContestInfo.won}</p>
+        `;
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,25 @@
+{
+  "name": "htdocs",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "   ",
+  "scripts": {
+    "test": " sad",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "da"
+  },
+  "keywords": [
+    "sa"
+  ],
+  "author": "s",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3"
+  }
+}

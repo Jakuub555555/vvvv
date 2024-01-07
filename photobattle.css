@@ -1,0 +1,207 @@
+body {
+    background: #1f1f1f;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.side_bar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #1f1f1f;
+    padding: 12px;
+    box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+        3px 3px 5px rgba(206, 206, 209, 0.1),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.1),
+        inset 3px 3px 5px rgba(206, 206, 209, 0.1);
+    transition: all 0.3s ease;
+}
+
+.side_bar h1, .side_bar h2 {
+    color: #dcdcdc;
+}
+
+.side_bar .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side_bar .title .logo {
+    font-size: 27px;
+    font-weight: 600;
+    color: #dcdcdc;
+    margin-bottom: 10px;
+}
+
+.side_bar ul {
+    margin-top: 35px;
+    list-style: none;
+}
+
+.side_bar ul a {
+    color: #dcdcdc;
+    text-decoration: none;
+    display: block;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 25px;
+    border-radius: 6px;
+    box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+        3px 3px 5px rgba(206, 206, 209, 0.1);
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.side_bar ul i {
+    margin-right: 10px;
+}
+
+.media_icons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.media_icons a {
+    position: relative;
+    margin: 0 4px;
+    font-size: 17px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+        3px 3px 5px rgba(206, 206, 209, 0.1);
+    transition: all 0.3s ease;
+}
+
+.side_bar ul a:hover:before,
+.media_icons a:hover:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset -3px -3px 7px rgba(255, 255, 255, 0.1),
+        inset 3px 3px 5px rgba(206, 206, 209, 0.1);
+}
+
+.side_bar ul a:hover:before {
+    border-radius: 6px;
+}
+
+.media_icons a:hover:before {
+    border-radius: 50%;
+}
+
+.side_bar ul a:hover {
+    color: #3498db;
+}
+
+.media_icons a:nth-child(1) {
+    color: #4267b2;
+}
+
+.media_icons a:nth-child(2) {
+    color: #1da1f2;
+}
+
+.media_icons a:nth-child(3) {
+    color: #e1306c;
+}
+
+.media_icons a:nth-child(4) {
+    color: #ff0000;
+}
+
+label {
+    font-size: 17px;
+    color: #dcdcdc;
+    box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+        3px 3px 5px rgba(206, 206, 209, 0.1);
+    height: 37px;
+    width: 37px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 37px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+label:hover {
+    box-shadow: inset -3px -3px 7px rgba(255, 255, 255, 0.1),
+        inset 3px 3px 5px rgba(206, 206, 209, 0.1);
+    color: #3498db;
+}
+
+#check {
+    display: none;
+}
+
+.bars {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+#check:checked ~ .side_bar {
+    left: 0;
+}
+
+.centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #dcdcdc;
+}
+
+.centered-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.centered-content h2 {
+    font-size: 24px;
+}
+ 
+.side_bar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #1f1f1f;
+    padding: 12px;
+    box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+        3px 3px 5px rgba(206, 206, 209, 0.1),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.1),
+        inset 3px 3px 5px rgba(206, 206, 209, 0.1);
+    transition: left 0.3s ease; /* Změna: přidána transition pouze pro 'left' vlastnost */
+}
+
+/* ... zbytek kódu zůstává nezměněný ... */
+
+
+body {
+    overflow: hidden;
+}
+
+.side_bar {
+    overflow: hidden;
+}
+
+
+
+
+
+

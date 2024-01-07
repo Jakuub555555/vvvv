@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Moje Skvělé Neumorphism Boční Menu</title>
+    <link rel="stylesheet" href="photobattle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <style>
+        /* Tvoje stávající CSS kódy zůstávají nezměněné */
+
+        /* Zde začínají nové nebo upravené styly pro side_bar a giveaway-form */
+        .side_bar {
+            position: fixed;
+            top: 0;
+            left: -310px;
+            width: 300px;
+            height: 100vh;
+            background: #1f1f1f;
+            padding: 12px;
+            box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+                3px 3px 5px rgba(206, 206, 209, 0.1);
+            transition: left 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .side_bar.hidden {
+            left: -1366px; /* Šířka standardního Full HD displeje */
+            box-shadow: none;
+        }
+
+        .side_bar:hover {
+            box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+                3px 3px 5px rgba(206, 206, 209, 0.1);
+        }
+
+        .side_bar .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Nutné pro absolutní pozici ikony */
+        }
+
+        .side_bar .title .logo {
+            font-size: 30px; /* Zvětšeno o 3px */
+            font-weight: 600;
+            color: #dcdcdc;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+            text-decoration: none; /* Odstranění ozdoby u textu */
+        }
+
+        .side_bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .side_bar ul li {
+            margin-bottom: 10px;
+        }
+
+        .side_bar ul li a {
+            text-decoration: none;
+            color: #dcdcdc;
+            display: flex;
+            align-items: center;
+        }
+
+        .side_bar ul li a i {
+            margin-right: 10px;
+        }
+
+        .media_icons {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .media_icons a {
+            color: #dcdcdc;
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .giveaway-form {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 300px;
+            background: #2c3e50; /* Barva pozadí formuláře */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.1),
+                3px 3px 5px rgba(206, 206, 209, 0.1);
+        }
+
+        .giveaway-form input {
+            margin-bottom: 16px;
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: transparent; /* Odstranění pozadí */
+            color: #fff; /* Barva textu ve formuláři */
+        }
+
+        .giveaway-form small {
+            color: #888;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .giveaway-form button {
+            background-color: #3498db; /* Barva tlačítka */
+            color: #fff; /* Barva textu na tlačítku */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<input type="checkbox" id="check">
+<label class="button bars" for="check"><i class="fas fa-bars"></i></label>
+
+<div class="side_bar hidden">
+    <div class="title">
+        <div class="logo">CodingLab</div>
+        <label class="button cancel" for="check"><i class="fas fa-times"></i></label>
+    </div>
+    <ul>
+        <li><a href="#"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+        <li><a href="#"><i class="fas fa-link"></i>Shortcuts</a></li>
+        <li><a href="#"><i class="fas fa-stream"></i>Overview</a></li>
+        <li><a href="#"><i class="fas fa-calendar-week"></i>Events</a></li>
+        <li><a href="#"><i class="fas fa-question-circle"></i>About</a></li>
+        <li><a href="#"><i class="fas fa-sliders-h"></i>Services</a></li>
+        <li><a href="#"><i class="fas fa-phone-volume"></i>Contact</a></li>
+        <li><a href="#"><i class="fas fa-comments"></i>Feedback</a></li>
+    </ul>
+    <div class="media_icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+</div>
+
+<!-- Instagram giveaway form -->
+<div class="giveaway-form">
+    <form action="/submit_entry" method="post">
+        <input type="text" id="instagram" name="instagram" placeholder="Instagram Jméno" required>
+        <small>Follow our Instagram account to enter the giveaway.</small>
+        <button onclick="window.open('https://www.instagram.com/photobattlecz/')">Follow on Instagram</button>
+    </form>
+</div>
+
+<!-- Zbytek tvého kódu zůstává nezměněný -->
+
+</body>
+</html>

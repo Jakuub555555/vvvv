@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <style>
+    /* Odstranit podtržení pro všechny odkazy */
+    a {
+      text-decoration: none;
+    }
+
+    /* Přidat styl pro odkazy ve .service-card */
+    .service-card a {
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .service-card a:hover {
+      color: #007BFF;
+      font-weight: bold;
+    }
+  </style>
+  <title>COMMUNITY POWER - League of Legends</title>
+</head>
+
+<body>
+  <div class="center-container">
+    <header id="header">
+      <h1 id="logo" class="logo">COMMUNITY POWER</h1>
+    </header>
+
+    <section id="services" class="animated-section">
+      <div class="service-container">
+        <!-- Service 1 -->
+        <a href="link-to-service-1" class="service-card">
+          <div>
+            <h3>Service 1</h3>
+            <p>Description of Service 1.</p>
+          </div>
+        </a>
+
+        <!-- Mezera místo Service 2 -->
+        <div style="width: 20px;"></div>
+
+        <!-- Service 3 -->
+        <a href="link-to-service-3" class="service-card">
+          <div>
+            <h3>Service 3</h3>
+            <p>Description of Service 3.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="animated-section" style="background-color: transparent;">
+      <p class="footer-text-color">&copy; 2023 COMMUNITY POWER. Všechna práva vyhrazena.</p>
+    </footer>
+  </div>
+</body>
+
+</html>
+
